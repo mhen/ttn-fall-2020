@@ -12,16 +12,10 @@ const Clicker: FC<props> = ({ startCount = 0 }) => {
       <p data-testid="counter-data" data-counter={counter}>
         You have clicked the button {counter} times.
       </p>
-      <button
-        data-testid="counter-increase"
-        onClick={() => setCounter(c => c + 1)}
-      >
+      <button data-testid="counter-increase" onClick={() => setCounter(c => c + 1)}>
         Click me!
       </button>
-      <button
-        data-testid="counter-reset"
-        onClick={() => setCounter(startCount)}
-      >
+      <button data-testid="counter-reset" onClick={() => setCounter(startCount)}>
         Reset!
       </button>
     </div>

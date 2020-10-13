@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+
 import Clicker from "./Clicker";
 
 describe("Clicker render", () => {
@@ -10,18 +11,12 @@ describe("Clicker render", () => {
 
   it("Check initial default state", () => {
     render(<Clicker />);
-    expect(screen.getByTestId("counter-data")).toHaveAttribute(
-      "data-counter",
-      "0"
-    );
+    expect(screen.getByTestId("counter-data")).toHaveAttribute("data-counter", "0");
   });
 
   it("Check initial custom state", () => {
     render(<Clicker startCount={10} />);
-    expect(screen.getByTestId("counter-data")).toHaveAttribute(
-      "data-counter",
-      "10"
-    );
+    expect(screen.getByTestId("counter-data")).toHaveAttribute("data-counter", "10");
   });
 });
 
@@ -33,10 +28,7 @@ describe("Clicker behavior", () => {
 
     userEvent.click(increaseButton);
 
-    expect(screen.getByTestId("counter-data")).toHaveAttribute(
-      "data-counter",
-      "1"
-    );
+    expect(screen.getByTestId("counter-data")).toHaveAttribute("data-counter", "1");
   });
 
   it("Check increase click 20 times", () => {
@@ -63,16 +55,10 @@ describe("Clicker behavior", () => {
 
     userEvent.click(increaseButton);
 
-    expect(screen.getByTestId("counter-data")).toHaveAttribute(
-      "data-counter",
-      "1"
-    );
+    expect(screen.getByTestId("counter-data")).toHaveAttribute("data-counter", "1");
 
     userEvent.click(resetButton);
 
-    expect(screen.getByTestId("counter-data")).toHaveAttribute(
-      "data-counter",
-      "0"
-    );
+    expect(screen.getByTestId("counter-data")).toHaveAttribute("data-counter", "0");
   });
 });
