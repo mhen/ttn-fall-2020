@@ -10,12 +10,18 @@ describe("Clicker render", () => {
 
   it("Check initial default state", () => {
     render(<Clicker />);
-    expect(screen.getByRole("text")).toHaveAttribute("data-counter", "0");
+    expect(screen.getByTestId("counter-data")).toHaveAttribute(
+      "data-counter",
+      "0"
+    );
   });
 
   it("Check initial custom state", () => {
     render(<Clicker startCount={10} />);
-    expect(screen.getByRole("text")).toHaveAttribute("data-counter", "10");
+    expect(screen.getByTestId("counter-data")).toHaveAttribute(
+      "data-counter",
+      "10"
+    );
   });
 });
 
@@ -26,8 +32,47 @@ describe("Clicker behavior", () => {
     const increaseButton = screen.getByTestId("counter-increase");
 
     userEvent.click(increaseButton);
+
+    expect(screen.getByTestId("counter-data")).toHaveAttribute(
+      "data-counter",
+      "1"
+    );
+  });
+
+  it("Check increase click 20 times", () => {
+    const timesToClick = 20;
+
+    render(<Clicker />);
+
+    const increaseButton = screen.getByTestId("counter-increase");
+    for (let index = 0; index < timesToClick; index++) {
+      userEvent.click(increaseButton);
+    }
+
+    expect(screen.getByTestId("counter-data")).toHaveAttribute(
+      "data-counter",
+      timesToClick.toString()
+    );
+  });
+
+  it("Check increase click then reset", () => {
+    render(<Clicker />);
+
+    const increaseButton = screen.getByTestId("counter-increase");
+    const resetButton = screen.getByTestId("counter-reset");
+
     userEvent.click(increaseButton);
 
-    expect(screen.getByRole("text")).toHaveAttribute("data-counter", "2");
+    expect(screen.getByTestId("counter-data")).toHaveAttribute(
+      "data-counter",
+      "1"
+    );
+
+    userEvent.click(resetButton);
+
+    expect(screen.getByTestId("counter-data")).toHaveAttribute(
+      "data-counter",
+      "0"
+    );
   });
 });

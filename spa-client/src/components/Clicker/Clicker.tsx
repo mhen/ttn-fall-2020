@@ -9,7 +9,7 @@ const Clicker: FC<props> = ({ startCount = 0 }) => {
 
   return (
     <div>
-      <p role="text" data-counter={counter}>
+      <p data-testid="counter-data" data-counter={counter}>
         You have clicked the button {counter} times.
       </p>
       <button
