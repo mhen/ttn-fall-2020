@@ -12,7 +12,8 @@ npm i
 
 ## Assignments
 
----
+<details>
+  <summary>Click to expand!</summary>
 
 ## 1
 
@@ -76,3 +77,5 @@ Solution provided in future branch:
 
 Solution provided in future branch:
 `git checkout final`
+
+</details>
