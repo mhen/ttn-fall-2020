@@ -20,11 +20,17 @@ npm i
 
 ### Solution
 
+Solution provided in future branch:
+`git checkout assignment/2`
+
 ## 2
 
 `git checkout assignment/2`
 
 ### Solution
+
+Solution provided in future branch:
+`git checkout assignment/3`
 
 ## 3
 
@@ -32,11 +38,17 @@ npm i
 
 ### Solution
 
+Solution provided in future branch:
+`git checkout assignment/4`
+
 ## 4
 
 `git checkout assignment/4`
 
 ### Solution
+
+Solution provided in future branch:
+`git checkout assignment/5`
 
 ## 5
 
@@ -44,14 +56,23 @@ npm i
 
 ### Solution
 
+Solution provided in future branch:
+`git checkout assignment/6`
+
 ## 6
 
 `git checkout assignment/6`
 
 ### Solution
 
+Solution provided in future branch:
+`git checkout assignment/7`
+
 ## 7
 
 `git checkout assignment/7`
 
 ### Solution
+
+Solution provided in future branch:
+`git checkout final`
