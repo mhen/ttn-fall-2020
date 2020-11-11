@@ -1,8 +1,8 @@
 # SPA Client
 
-This is a fully built test driven React application, ready to be exported to a static bundle - functioning as a SPA.
+This is a fully built test-driven React application, ready to be exported to a static bundle - functioning as a SPA.
 
-## Setup
+## Setup code locally
 
 ```shell
 cp .env.example .env.local
@@ -70,7 +70,25 @@ Solution provided in future branch:
 
 ## 2
 
-`git checkout assignment/2`
+For this next assignment, we will explore the different ways of building a pipeline for Azure DevOps.
+
+During the first assignment, you might have built the pipeline by writing directly in the .yaml file.
+This is not a bad way and most developers would prefer this way. Azure, however, isn't as developer-friendly as other CI/CD tools.
+Each different Tasks comes with its object structure, and the only formatting help you can get is from the online editor itself.
+
+Head over to Azure DevOps and ensure you have a pipeline set up.
+
+### 2.1
+
+Edit the provided pipeline [./.ci/assignment2.yaml](.ci/assignment2.yaml) with the online editor.
+On the right-hand side, you should see a "tasks" menu.
+
+Find the GitHub comment and finish setting up the task such that the pipeline will write a comment on an issue in your repo.
+_Hint: You can click the "About this task" to see how to configure it_
+
+### 2.2
+
+Let's finish the pipeline for our code. Recall the script procedure from [1.2](##1.2).
 
 ### Solution
 
