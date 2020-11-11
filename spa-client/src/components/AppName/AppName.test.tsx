@@ -20,7 +20,7 @@ describe("AppName render", () => {
   });
 
   it("renders with variable", () => {
-    process.env.NEXT_PUBLIC_APP_NAME = "MYKEY";
+    process.env.APP_NAME = "MYKEY";
     render(<AppName />);
     expect(screen.getByRole("heading")).toHaveTextContent("MYKEY");
   });
