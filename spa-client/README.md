@@ -51,31 +51,4 @@ Solution provided in future branch:
 Solution provided in future branch:
 `git checkout assignment/5`
 
-## 5
-
-`git checkout assignment/5`
-
-### Solution
-
-Solution provided in future branch:
-`git checkout assignment/6`
-
-## 6
-
-`git checkout assignment/6`
-
-### Solution
-
-Solution provided in future branch:
-`git checkout assignment/7`
-
-## 7
-
-`git checkout assignment/7`
-
-### Solution
-
-Solution provided in future branch:
-`git checkout final`
-
 </details>
