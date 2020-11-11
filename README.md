@@ -5,6 +5,8 @@ Tech Talent Night November 2020.
 
 ---
 
+To start with you need to fork this repository.
+
 This assignment is split into two parts.
 The way both parts work is as followed. Starting on both `main` and `assignment/1` the first assignment is written in the readme.
 Start by branching out `git checkout -b solution/1`. Once done the next assignment contains the solution for the previous.
@@ -19,4 +21,4 @@ NOTE: files that you should avoid editing:
 
 [First part](./spa-client) is a static SPA ready to be built and shipped. Head over to the [README](./spa-client/README.md) there to see the first assignment.
 
-[Second part]() is a .NET Core service meant to be hosted in a container / web service.
+[Second part](./dotnet-service) is a .NET Core service meant to be hosted in a container / web service.
