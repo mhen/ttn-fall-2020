@@ -1,7 +1,9 @@
 trigger:
-  tags:
+  branches:
     include:
-      - v*
+      - master
+      - assignment/*
+      - solution/*
 
 pool:
   vmImage: "windows-2019"
