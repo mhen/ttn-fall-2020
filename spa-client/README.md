@@ -29,20 +29,24 @@ The following npm scripts have been provided.
 - test
 - lint
 
-Your first assignment is describe each of these scripts.
+Your first assignment is to describe each of these scripts.
 What you expect them to do, and why they might be important for the project.
 
 ### 1.2
 
-Next, you need to provide an order in which to run these script to provide a fully deployment ready static bundle
+Next, you need to provide an order in which to run these script to provide a fully deployment-ready static bundle
 containing our SPA.
 
 ### 1.3
 
-Now lets build a yaml file for Azure pipelines.
+Get familiar with [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/)
+
+### 1.4
+
+Now let's build a YAML file for Azure pipelines.
 Provided is a yaml declaration of a Azure pipeline located at [./.ci/assignment1.yaml](.ci/assignment1.yaml).
 
-To get you started here are some information about [stages, jobs, steps and tasks](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops#stage).
+To get you started here is some information about [stages, jobs, steps and tasks](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops#stage).
 
 - stages
   > You can organize the jobs in your pipeline into stages. Stages are the major divisions in a pipeline: "build this app", "run these tests", and "deploy to pre-production" are good examples of stages. They are a logical boundary in your pipeline at which you can pause the pipeline and perform various checks.
@@ -53,11 +57,11 @@ To get you started here are some information about [stages, jobs, steps and task
 - tasks
   > A task is the building block for defining automation in a pipeline. A task is simply a packaged script or procedure that has been abstracted with a set of inputs.
 
-With this information you should now be able to extend the provided file to
+With this information, you should now be able to extend the provided file to
 
-1. print out `Hello world`
-2. run tests
-3. ???
+1. print out `Hello World`
+2. install node modules ([_hint_](https://docs.npmjs.com/cli/v6/commands/npm-ci))
+3. run tests
 
 ### Solution
 
