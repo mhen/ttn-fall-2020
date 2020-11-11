@@ -1,0 +1,22 @@
+trigger:
+  branches:
+    include:
+      - master
+      - assignment/*
+      - solution/*
+
+pool:
+  vmImage: "windows-2019"
+
+stages:
+  - stage: STAGE_NAME
+    displayName: PRETTY_STAGE_NAME
+    jobs:
+      - job: CI
+        steps:
+          - task: GitHubComment@0
+            inputs:
+              gitHubConnection: CONNECTION
+              repositoryName: REPO_NAME
+              id: "1"
+              comment: "text"

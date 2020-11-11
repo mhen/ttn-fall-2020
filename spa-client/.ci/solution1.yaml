@@ -1,0 +1,27 @@
+trigger:
+  branches:
+    include:
+      - master
+      - assignment/*
+      - solution/*
+
+pool:
+  vmImage: "windows-2019"
+
+stages:
+  - stage: STAGE_NAME
+    displayName: PRETTY_STAGE_NAME
+    jobs:
+      - job: CI
+        # This job installs all dependencies as a clean slate, runs tests and finally builds the app. If all steps are successful than the job is successful.
+        steps:
+          - task: Npm@1
+            inputs:
+              command: "custom"
+              workingDir: "spa-client"
+              customCommand: "run cit"
+          - task: Npm@1
+            inputs:
+              command: "custom"
+              workingDir: "spa-client"
+              customCommand: "run build"
