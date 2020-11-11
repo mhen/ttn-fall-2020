@@ -145,11 +145,33 @@ Solution provided in future branch:
 
 ## 4
 
-`git checkout assignment/4`
+This is the final assignment. All we need to do is build the final pipelines. These you are to build yourself from scratch.
+We require two pipelines.
+
+### 4.1
+
+The first pipeline is our CI pipeline. Recall what CI is and build a pipeline that triggers on every push to `development`.
+We do not expose anything to developers in this project, so all the CI pipeline needs to do is ensure the app follows all linting rules,
+can be built, and covers the specified test coverage targets.
+
+Hints: [1](https://docs.npmjs.com/cli/v6/using-npm/scripts#prepare-and-prepublish) [2](https://docs.npmjs.com/cli/v6/commands/npm-install-ci-test)
+
+### 4.2
+
+The second pipeline is our CD pipeline. CD here should deploy directly out to the Azure App when any tag starting with `v` is added. Like
+`v1.0.0` or `v1.0.1-canary1`.
+
+Since this pipeline can trigger on branch you are required to build the app, even if it is triggered on the `development` branch running the CI pipeline.
+
+### 4.3 (optional)
+
+If you are still here, there is a little extra good for you. The app we have provided supports a build time variable. So if you change the variable APP_NAME in the pipeline to any text you should see this text once the app is deployed.
+
+This is useful when building big application that needs to be "tagged" with a build version. [See this for more info](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#build-variables-devops-services) -> `Build.SourceBranch`
 
 ### Solution
 
 Solution provided in future branch:
-`git checkout assignment/5`
+`git checkout final`
 
 </details>
