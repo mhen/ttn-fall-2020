@@ -97,7 +97,46 @@ Solution provided in future branch:
 
 ## 3
 
-`git checkout assignment/3`
+Setup an Azure Web App. Head over to [Azure](https://portal.azure.com/)
+
+### 3.1
+
+Prepare the web app.
+
+- Create a resource group in the West European region. (West is closer than North)
+- Create a "Web App" resource:
+  - Pick a .NET runtime. We recommend .NET Core 3.1.
+  - Pick the Windows operation system. Required for our static application, as the IIS can be configured by code.
+  - Create an App Service Plan. Be sure to pick the cheapest you can.
+
+### 3.2 (optional)
+
+Let's make your web app secure.
+
+Azure provides something called Easy Auth. A quick way to lock your app with the internal AD from your Azure account.
+Inside the Web App there is a section called Settings. There pick "Authentication / Authorization".
+
+After turning on Auth you then need to pick : Log in with Azure Active Directory" in the dropdown and then proceed to configure the AAD provider.
+
+In the AAD config, simply pick Express Management mode and click OK. This will set up an AAD application registration and tie the OAuth flow up to that app registration.
+
+Finally, click Save.
+
+Your application is now only reachable by users in your Azure account, which if this is your first time using Azure is only you.
+
+### 3.3
+
+Head back over to Azure DevOps.
+
+Your final task is to setup a deployment task in the provided pipeline. [./.ci/assignment3.yaml](.ci/assignment3.yaml)
+You need to zip your content, be aware of the directories.
+
+The tasks you should use are:
+
+- Azure Web App
+- Archive files.
+
+Note that in this pipeline, the trigger has changed.
 
 ### Solution
 
