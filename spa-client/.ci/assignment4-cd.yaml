@@ -7,11 +7,35 @@ pool:
   vmImage: 'windows-2019'
 
 stages:
-  - stage: DEPLOY 
+  - stage: BUILD_AND_DEPLOY
     jobs:
-      - job: DEPLOY 
+      - job: BUILD_AND_DEPLOY
         steps:
-          - task: CmdLine@2
-            inputs:
-              script: |
-                echo "Hello, deploy"
+        - task: Npm@1
+          inputs:
+            command: 'ci'
+            workingDir: 'spa-client'
+        - task: Npm@1
+          inputs:
+            command: 'custom'
+            workingDir: 'spa-client'
+            customCommand: 'run build'
+        - task: Npm@1
+          inputs:
+            command: 'custom'
+            workingDir: 'spa-client'
+            customCommand: 'run export'
+        - task: ArchiveFiles@2
+          inputs:
+            rootFolderOrFile: 'spa-client/out'
+            includeRootFolder: false
+            archiveType: 'zip'
+            archiveFile: 'spa-client/out.zip'
+            replaceExistingArchive: true
+        - task: AzureWebApp@1
+          inputs:
+            azureSubscription: 'Gratis prøveversion(85be699c-0565-45da-bca3-0821bdfdecee)'
+            appType: 'webApp'
+            appName: ${APP_NAME}
+            package: 'spa-client/out.zip'
+            deploymentMethod: 'zipDeploy'
