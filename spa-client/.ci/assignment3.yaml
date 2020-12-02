@@ -7,16 +7,36 @@ pool:
   vmImage: "windows-2019"
 
 stages:
-  - stage: STAGE_NAME
-    displayName: PRETTY_STAGE_NAME
+  - stage: STAGE_DEPLOY
+    displayName: BUILD_AND_DEPLOY
     jobs:
-      - job: CI
+      - job: CI_CD
         steps:
-          - task: Npm@1
-            # TODO
-          - task: Npm@1
-            # TODO
-          - task: ArchiveFiles@2
-            # TODO
-          - task: AzureWebApp@1
-            # TODO
+        - task: Npm@1
+          inputs:
+            command: 'ci'
+            workingDir: 'spa-client'
+        - task: Npm@1
+          inputs:
+            command: 'custom'
+            workingDir: 'spa-client'
+            customCommand: 'run build'
+        - task: Npm@1
+          inputs:
+            command: 'custom'
+            workingDir: 'spa-client'
+            customCommand: 'run export'
+        - task: ArchiveFiles@2
+          inputs:
+            rootFolderOrFile: 'spa-client/out'
+            includeRootFolder: false
+            archiveType: 'zip'
+            archiveFile: 'spa-client/out.zip'
+            replaceExistingArchive: true
+        - task: AzureWebApp@1
+          inputs:
+            azureSubscription: 'Gratis prøveversion(85be699c-0565-45da-bca3-0821bdfdecee)'
+            appType: 'webApp'
+            appName: 'ttn2020'
+            package: 'spa-client/out.zip'
+            deploymentMethod: 'zipDeploy'
