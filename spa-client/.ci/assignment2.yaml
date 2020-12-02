@@ -14,9 +14,9 @@ stages:
     jobs:
       - job: CI
         steps:
-          - task: GitHubComment@0
-            inputs:
-              gitHubConnection: CONNECTION
-              repositoryName: REPO_NAME
-              id: "1"
-              comment: "text"
+        - task: GitHubComment@0
+          inputs:
+            gitHubConnection: 'github'
+            repositoryName: 'mhen/ttn-fall-2020'
+            id: '1'
+            comment: 'Hello from Azure Pipelines'
