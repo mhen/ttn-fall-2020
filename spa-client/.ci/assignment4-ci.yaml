@@ -1,0 +1,15 @@
+trigger:
+  - development
+
+pool:
+  vmImage: 'windows-2019'
+
+stages:
+  - stage: BUILD_AND_TEST
+    jobs:
+      - job: BUILD_AND_TEST
+        steps:
+          - task: CmdLine@2
+            inputs:
+              script: |
+                echo "Hello, build and test"

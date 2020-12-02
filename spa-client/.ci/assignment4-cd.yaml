@@ -1,0 +1,17 @@
+trigger:
+  tags:
+    include:
+      - v*
+
+pool:
+  vmImage: 'windows-2019'
+
+stages:
+  - stage: DEPLOY 
+    jobs:
+      - job: DEPLOY 
+        steps:
+          - task: CmdLine@2
+            inputs:
+              script: |
+                echo "Hello, deploy"
