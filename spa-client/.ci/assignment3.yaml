@@ -37,6 +37,6 @@ stages:
           inputs:
             azureSubscription: 'Gratis prøveversion(85be699c-0565-45da-bca3-0821bdfdecee)'
             appType: 'webApp'
-            appName: 'ttn2020'
+            appName: APP_NAME
             package: 'spa-client/out.zip'
             deploymentMethod: 'zipDeploy'
