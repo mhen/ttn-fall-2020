@@ -1,22 +1,28 @@
 trigger:
-  branches:
-    include:
-      - master
-      - assignment/*
-      - solution/*
+  - master
+  - assignment/*
+  - solution/*
 
 pool:
   vmImage: "windows-2019"
 
 stages:
-  - stage: STAGE_NAME
-    displayName: PRETTY_STAGE_NAME
+  - stage: BUILD_STAGE
+    displayName: BUILD
     jobs:
       - job: CI
         steps:
-        - task: GitHubComment@0
+        - task: Npm@1
           inputs:
-            gitHubConnection: 'github'
-            repositoryName: 'mhen/ttn-fall-2020'
-            id: '1'
-            comment: 'Hello from Azure Pipelines'
+            command: 'ci'
+            workingDir: 'spa-client'
+        - task: Npm@1
+          inputs:
+            command: 'custom'
+            workingDir: 'spa-client'
+            customCommand: 'run build'
+        - task: Npm@1
+          inputs:
+            command: 'custom'
+            workingDir: 'spa-client'
+            customCommand: 'run export'
