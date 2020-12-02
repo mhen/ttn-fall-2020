@@ -9,7 +9,17 @@ stages:
     jobs:
       - job: BUILD_AND_TEST
         steps:
-          - task: CmdLine@2
-            inputs:
-              script: |
-                echo "Hello, build and test"
+        - task: Npm@1
+          inputs:
+            command: 'ci'
+            workingDir: 'spa-client'
+        - task: Npm@1
+          inputs:
+            command: 'custom'
+            workingDir: 'spa-client'
+            customCommand: 'run lint'
+        - task: Npm@1
+          inputs:
+            command: 'custom'
+            workingDir: 'spa-client'
+            customCommand: 'run build'
