@@ -1,9 +1,7 @@
 trigger:
-  branches:
-    include:
-      - master
-      - assignment/*
-      - solution/*
+  - master
+  - assignment/*
+  - solution/*
 
 pool:
   vmImage: "windows-2019"
@@ -18,4 +16,14 @@ stages:
             inputs:
               script: |
                 echo Hello world
-                echo Hello universe
+      - job: BUILD_AND_TEST
+        steps:
+          - task: Npm@1
+            inputs:
+              command: 'ci'
+              workingDir: 'spa-client'
+          - task: Npm@1
+            inputs:
+              command: 'custom'
+              workingDir: 'spm-client'
+              customCommand: 'run test'
