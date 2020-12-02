@@ -25,5 +25,5 @@ stages:
           - task: Npm@1
             inputs:
               command: 'custom'
-              workingDir: 'spm-client'
+              workingDir: 'spa-client'
               customCommand: 'run test'
